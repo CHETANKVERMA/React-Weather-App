@@ -10,7 +10,8 @@ import searchicon from '../Assets/search.png'
 import snowicon from '../Assets/snow.png';
 import windicon from '../Assets/wind.png';
 
-export default() => {
+// dout abb bhi toh work kar rha hainame change karne par
+const weatherapp =() => {
 
   let ApiKey="eeb020f603695d56c5e4fc3d5ef85829";
  const searchHere = async ()=>{
@@ -42,7 +43,7 @@ export default() => {
 
         <div className='topBar'>
             <input type='text' className='cityInput' placeholder='Give City Name Here' ></input>
-            <div className='searchIcon' onclick={ ()=> {searchHere()}} >
+            <div className='searchIcon' onClick={ ()=> {searchHere()}  } >
              
                 <img src={searchicon} alt="searchIcon"/>
             </div>
@@ -85,4 +86,11 @@ export default() => {
 
   )
 }
+export default weatherapp;
+import React from 'react'
+
+
+
+
+
 
