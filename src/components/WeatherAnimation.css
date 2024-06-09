@@ -1,0 +1,152 @@
+/* WeatherAnimation.css */
+.weather-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    #72b8fe,
+    #0081cf,
+    #72b8fe,
+    #ffd86b,
+    #ff9a5c,
+    #ffd86b,
+    #c2c2c2,
+    #72b8fe
+  );
+  background-size: 800% 800%;
+  animation: gradientFlow 30s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animated Weather Icons */
+@keyframes sunny {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.sun-icon {
+  animation: sunny 2s infinite ease-in-out;
+}
+
+@keyframes raindrop {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+.rain-icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 15px;
+  background: #0081cf;
+  border-radius: 50%;
+  animation: raindrop 0.8s infinite linear;
+}
+
+@keyframes snowfall {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(20px) translateX(10px);
+  }
+}
+
+.snow-icon::before,
+.snow-icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.snow-icon::before {
+  top: 40%;
+  left: 30%;
+  animation: snowfall 1.5s infinite ease-in-out;
+}
+
+.snow-icon::after {
+  top: 60%;
+  left: 60%;
+  animation: snowfall 1.2s 0.5s infinite ease-in-out;
+}
+
+/* Day/Night Cycle */
+.day-night-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  transition: background-color 2s ease;
+}
+
+.day {
+  background-color: #87ceeb;
+}
+
+.night {
+  background-color: #191970;
+}
+
+/* Responsive Interactions */
+.cityInput,
+.searchIcon {
+  transition: transform 0.2s ease;
+}
+
+.cityInput:focus,
+.searchIcon:hover {
+  transform: scale(1.05);
+}
+
+.element {
+  transition: box-shadow 0.3s ease;
+}
+
+.element:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
