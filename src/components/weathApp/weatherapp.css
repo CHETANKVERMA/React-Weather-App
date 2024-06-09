@@ -14,14 +14,14 @@ html {
   align-items: center;
   height: 100vh;
 }
-
 .container {
   background-color: rgb(26, 25, 25);
-  max-width: 400px; /* Reduce maximum width */
   width: 90%;
-  padding: 25px;
-  border-radius: 20px; /* Reduce border radius */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+  max-width: 400px;
+  padding: 25px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 50px; /* Add margin to center the container */
 }
 
 .topBar {
@@ -54,7 +54,7 @@ html {
 .weathertemp {
   display: flex;
   justify-content: center;
-  font-size: 6vw;
+  font-size: 5vw; /* Adjust font size for responsiveness */
   font-weight: 400;
   color: white;
   margin-top: 20px;
@@ -63,7 +63,7 @@ html {
 .weatherlocation {
   display: flex;
   justify-content: center;
-  font-size: 3.5vw;
+  font-size: 2.5vw; /* Adjust font size for responsiveness */
   margin-top: 20px;
   color: white;
 }
@@ -77,8 +77,8 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  margin-top: 30px; /* Reduce margin top */
+  gap: 15px; /* Adjust gap for responsiveness */
+  margin-top: 30px;
   color: white;
 }
 
